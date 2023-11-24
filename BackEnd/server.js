@@ -57,6 +57,13 @@ app.get('/', (req, res) => {//Server sits and listens for request - / call back 
   res.send('Hello World!')//hello world response.
 })//test1
 
+//server listens for HTTP put method
+app.put('/api/book/:id', async(req, res) =>{
+  console.log("updating URL."+request.params.id);
+  let book = await bookModel.findByIdAndUpdate(req.params.id, req.body,{new:true});//allows you to replace the data of the book (title author cover)
+  res.send(book);//response with book details.
+})
+
 app.get('/api/books', async (req, res) =>{
     //removed hard coded array.
     let books = await bookModel.find({}); //books = everything that comes from db.

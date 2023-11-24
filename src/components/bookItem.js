@@ -1,4 +1,5 @@
 import Card from 'react-bootstrap/Card';//card import.
+import { Link } from 'react-router-dom';//link import. - used to create the button to change URL.
 
 function BookItem(props){
      
@@ -11,6 +12,7 @@ function BookItem(props){
       <p>{props.myBook.author}</p>
         
       </Card.Body>
+      <Link to = {"/edit/"+props.myBook._id} className='btn btn-primary'>Edit</Link> {/* button to change url to /edit - btn primary displays the blue outline around the button bring me to my chose book to edit */}
     </Card>
 
            

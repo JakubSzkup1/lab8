@@ -10,6 +10,7 @@ import Navbar from 'react-bootstrap/Navbar';//nav bar import
 import {BrowserRouter, Routes, Route} from 'react-router-dom'; // brwoser router import
 import Create from './components/create'; //imports from component  
 import Read from './components/read';//imports from component 
+import Edit from './components/edit';
 
 
 function App() {//h1 tag added
@@ -34,7 +35,8 @@ function App() {//h1 tag added
     <Routes>
       <Route path = '/' element={<Content></Content>}></Route>
       <Route path = '/read' element={<Read></Read>}></Route> {/* read comonent added to nav bar, when clicked brings to read.js file*/}
-      { <Route path = '/create' element={<Create></Create>}></Route>  /* route paths created, placed in the nav bar when clicked on they bring to the corresponding component. */ }
+       <Route path = '/create' element={<Create></Create>}></Route>  {/* route paths created, placed in the nav bar when clicked on they bring to the corresponding component. */ }
+      <Route path = '/edit/:id' element={<Edit></Edit>}></Route> {/* route path for edit ':' means that part of the url is a parameter*/}
     </Routes>
     </div>
     </BrowserRouter>
